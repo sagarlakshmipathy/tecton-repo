@@ -3,7 +3,7 @@ This repository contains a collection of code and resources that can be used to 
 ### Getting Started
 To get started with this repository, you will need to have a Tecton account and have the Tecton CLI installed on your local machine. If you do not have a Tecton account, you can sign up for a free trial on the Tecton website.
 
-Repository Structure
+### Repository Structure
 This repository is organized into several directories, each of which contains code and resources for a specific aspect of feature engineering with Tecton. Here is a brief overview of each directory:
 
 ```
@@ -27,26 +27,32 @@ This repository is organized into several directories, each of which contains co
 
 ```
 
-data_sources: This directory contains code and resources for defining data sources in Tecton. Data sources are the raw data inputs that are used to generate feature views.
+#### data_sources: 
+This directory contains code and resources for defining data sources in Tecton. Data sources are the raw data inputs that are used to generate feature views.
 
-entities.py: In Tecton, entities are the core building blocks of feature engineering pipelines. They represent the business objects or concepts that you want to generate features for, and are used to define the inputs and outputs of your feature views.
+#### entities.py: 
+In Tecton, entities are the core building blocks of feature engineering pipelines. They represent the business objects or concepts that you want to generate features for, and are used to define the inputs and outputs of your feature views.
 
-feature_services: This directory contains code and resources for deploying feature services in Tecton. Feature services are REST APIs that expose feature views to downstream applications.
+#### feature_services: 
+This directory contains code and resources for deploying feature services in Tecton. Feature services are REST APIs that expose feature views to downstream applications.
 
-batch_feature_views: This directory contains code and resources for building batch feature views in Tecton. Batch feature views are precomputed features that are generated on a regular schedule (e.g., daily, hourly) for use in downstream applications.
+#### batch_feature_views: 
+This directory contains code and resources for building batch feature views in Tecton. Batch feature views are precomputed features that are generated on a regular schedule (e.g., daily, hourly) for use in downstream applications.
 
-on_demand_feature_views: This directory contains code and resources for building on-demand feature views in Tecton. On-demand feature views are computed on-the-fly in response to user requests and are typically used in real-time applications.
+#### on_demand_feature_views: 
+This directory contains code and resources for building on-demand feature views in Tecton. On-demand feature views are computed on-the-fly in response to user requests and are typically used in real-time applications.
 
-tests: This directory contains the essential unit tests run before deploying the feature views.
+#### tests: 
+This directory contains the essential unit tests run before deploying the feature views.
 
-Usage
+### Usage
 To use this repository, you can start by exploring the code and resources in each directory. 
 
 To deploy a feature engineering pipeline using Tecton, you will typically need to follow these steps:
 
 1. Define your data sources in the data_source directory.
 2. Define your batch and on-demand feature views in the batch_feature_views and on_demand_feature_views directories, respectively.
-3. Deploy your feature views using the Tecton CLI.
-4. Define your feature services in the feature_services directory.
-5. Deploy your feature services using the Tecton CLI.
-6. For more detailed instructions on how to use Tecton, please refer to the Tecton documentation.
+3. Define your feature services in the feature_services directory.
+4. Define your unit tests in the tests directory.
+4. Deploy your feature views and feature services using the Tecton CLI. Use `tecton apply` command lets tecton deploy these objects after running unit tests automatically. If you'd like to skip testing use `tecton apply --skip-tests` command instead.
+5. For more detailed instructions on how to use Tecton, please refer to the Tecton documentation.
